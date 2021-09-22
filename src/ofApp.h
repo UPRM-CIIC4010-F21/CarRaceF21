@@ -7,6 +7,7 @@ class ofApp : public ofBaseApp{
 	private:
 		double xPos = 0;
 		double yPos = 0;
+		int direction = 1;
 
 	public:
 		void setup();

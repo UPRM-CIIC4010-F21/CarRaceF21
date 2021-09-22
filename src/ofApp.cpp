@@ -5,6 +5,7 @@ void ofApp::setup(){
 
     this->xPos = 0;
     this->yPos = 0;
+    this->direction = 1;
 
 }
 
@@ -12,8 +13,21 @@ void ofApp::setup(){
 void ofApp::update(){
 
     int hSpeed = 5;
-    if (xPos + 60 + hSpeed < ofGetWidth()) {
-        this->xPos += hSpeed;
+    if (direction > 0) {
+        if (xPos + 60 + hSpeed < ofGetWidth()) {
+            this->xPos += direction * hSpeed;
+        }
+        else {
+            direction = -1;
+        }
+    }
+    else {
+        if (xPos - 60 - hSpeed > 0) {
+            this->xPos += direction * hSpeed;
+        }
+        else {
+            direction = 1;
+        }
     }
 
 }
