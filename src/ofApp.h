@@ -4,6 +4,10 @@
 
 class ofApp : public ofBaseApp{
 
+	private:
+		double xPos = 0;
+		double yPos = 0;
+
 	public:
 		void setup();
 		void update();
@@ -21,4 +25,5 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
+
 };

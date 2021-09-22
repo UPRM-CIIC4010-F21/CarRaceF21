@@ -3,19 +3,26 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 
+    this->xPos = 0;
+    this->yPos = 0;
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
 
+    int hSpeed = 5;
+    if (xPos + 60 + hSpeed < ofGetWidth()) {
+        this->xPos += hSpeed;
+    }
+
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 
-    double x = 10;
-    double y = 10;
+    double x = this->xPos;
+    double y = this->yPos;
     ofSetColor(ofColor(255,255,255));
     // Draw body
     ofDrawRectangle(x + 0, y + 10, 60, 10);
