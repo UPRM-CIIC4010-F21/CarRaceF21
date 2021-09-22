@@ -1,0 +1,9 @@
+obj/osx/Debug/src/ofApp.o
+bin/CarRaceF21_debug.app/Contents/MacOS/CarRaceF21_debug
+.vscode/browse.db-wal
+.vscode/browse.db-shm
+.vscode/browse.db
+bin/*
+CarRaceF21.xcodeproj/*
+obj/*
+openFrameworks-Info.plist
