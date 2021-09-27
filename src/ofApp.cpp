@@ -10,26 +10,20 @@ void ofApp::setup(){
 }
 
 //--------------------------------------------------------------
-void ofApp::update(){
+void ofApp::update()
+{
 
     int hSpeed = 5;
-    if (direction > 0) {
-        if (xPos + 60 + hSpeed < ofGetWidth()) {
-            this->xPos += direction * hSpeed;
-        }
-        else {
-            direction = -1;
-        }
-    }
-    else {
-        if (xPos - 60 - hSpeed > 0) {
-            this->xPos += direction * hSpeed;
-        }
-        else {
-            direction = 1;
-        }
-    }
+    if (((direction > 0) && (xPos + 60 + hSpeed < ofGetWidth())) ||
+        (((direction < 0) && (xPos - hSpeed > 0))))
+    {
 
+        this->xPos += direction * hSpeed;
+    }
+    else
+    {
+        direction *= -1;
+    }
 }
 
 //--------------------------------------------------------------
