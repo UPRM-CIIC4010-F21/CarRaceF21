@@ -1,13 +1,14 @@
 #pragma once
 
 #include "ofMain.h"
+#include "Car.h"
 
 class ofApp : public ofBaseApp{
 
 	private:
-		double xPos = 0;
-		double yPos = 0;
-		int direction = 1;
+		// double xPos = 0;
+		// double yPos = 0;
+		// int direction = 1;
 
 	public:
 		void setup();
@@ -25,6 +26,8 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+
+		Car theCar = Car(0,0,1); // Creates a single car at (0,0) going left to right
 		
 
 };
