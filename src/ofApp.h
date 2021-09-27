@@ -27,7 +27,9 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		Car theCar = Car(0,0,1); // Creates a single car at (0,0) going left to right
-		
+		//Car theCar = Car(0,0,1); // Creates a single car at (0,0) going left to right
 
+		const int numCars=10;
+		Car theCars[10];
+		
 };

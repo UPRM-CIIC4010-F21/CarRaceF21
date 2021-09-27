@@ -22,6 +22,12 @@ class Car {
         direction = d;
     }
 
+    Car()
+    {
+        xPos = 0;
+        yPos = 0;
+        direction = 1;
+    }
+
     void draw();
-    
 };

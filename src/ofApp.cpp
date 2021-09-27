@@ -3,12 +3,15 @@
 #include "Car.h"
 
 //--------------------------------------------------------------
-void ofApp::setup(){
+void ofApp::setup()
+{
 
-    // this->xPos = 0;
-    // this->yPos = 0;
-    // this->direction = 1;
-
+    int lane = 0;
+    for (int i = 0; i < numCars; i++)
+    {
+        theCars[i].move(0, lane);
+        lane += 40;
+    }
 }
 
 //--------------------------------------------------------------
@@ -16,23 +19,26 @@ void ofApp::update()
 {
 
     int hSpeed = 5;
-    if (((theCar.getDirection() > 0) && (theCar.getX() + 60 + hSpeed < ofGetWidth())) ||
-        (((theCar.getDirection() < 0) && (theCar.getX() - hSpeed > 0))))
-    {
+    for (int i=0; i<numCars; i++) {
+        if (((theCars[i].getDirection() > 0) && (theCars[i].getX() + 60 + hSpeed < ofGetWidth())) ||
+            (((theCars[i].getDirection() < 0) && (theCars[i].getX() - hSpeed > 0))))
+        {
 
-        theCar.move(theCar.getDirection() * hSpeed, 0);
-    }
-    else
-    {
-        theCar.setDirection(theCar.getDirection() * -1);
+            theCars[i].move(theCars[i].getDirection() * hSpeed, 0);
+        }
+        else
+        {
+            theCars[i].setDirection(theCars[i].getDirection() * -1);
+        }
     }
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 
-    this->theCar.draw();
-
+    for (int i=0; i<numCars; i++) {
+        this->theCars[i].draw();
+    }
 }
 
 //--------------------------------------------------------------
