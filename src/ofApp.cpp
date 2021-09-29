@@ -10,7 +10,8 @@ void ofApp::setup()
     int lane = 0;
     for (int i = 0; i < numCars; i++)
     {
-        theCars[i].move(0, lane);
+        theCars.push_back(Car(0,lane,1));
+        //theCars[i].move(0, lane);
         lane += 40;
     }
 }
