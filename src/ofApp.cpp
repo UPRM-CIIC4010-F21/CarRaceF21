@@ -6,6 +6,7 @@
 void ofApp::setup()
 {
 
+    raceFinished = false;
     int lane = 0;
     for (int i = 0; i < numCars; i++)
     {
@@ -17,6 +18,7 @@ void ofApp::setup()
 //--------------------------------------------------------------
 void ofApp::update()
 {
+    if (raceFinished) return;
 
     int hSpeed = 5;
     for (int i=0; i<numCars; i++) {
@@ -31,6 +33,12 @@ void ofApp::update()
         else
         {
             theCars[i].setDirection(theCars[i].getDirection() * -1);
+        }
+    }
+
+    for(int i=0; i<numCars; i++) {
+        if ((theCars[i].getDirection() > 0) && (theCars[i].getX() + 60 + hSpeed >= ofGetWidth())) {
+            raceFinished = true;
         }
     }
 }

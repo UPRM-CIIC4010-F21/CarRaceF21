@@ -31,5 +31,6 @@ class ofApp : public ofBaseApp{
 
 		const int numCars=10;
 		Car theCars[10];
+		bool raceFinished;
 		
 };
