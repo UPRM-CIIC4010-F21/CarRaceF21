@@ -11,7 +11,7 @@ void Car::draw() {
 
     double x = this->xPos;
     double y = this->yPos;
-    ofSetColor(ofColor(255,255,255));
+    ofSetColor(this->getColor());
     // Draw body
     ofDrawRectangle(x + 0, y + 10, 60, 10);
     // Draw roof and windshields

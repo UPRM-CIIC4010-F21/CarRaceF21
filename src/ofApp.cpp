@@ -10,7 +10,7 @@ void ofApp::setup()
     int lane = 0;
     for (int i = 0; i < numCars; i++)
     {
-        theCars.push_back(Car(0,lane,1));
+        theCars.push_back(Car(0,lane,1, ofColor(255, 255, 255)));
         //theCars[i].move(0, lane);
         lane += 40;
     }
@@ -42,6 +42,18 @@ void ofApp::update()
             raceFinished = true;
         }
     }
+
+    int leaderPos = 0;
+    theCars[0].setColor(ofColor(255, 255, 255));
+
+    for (int i=1; i<numCars; i++) {
+        if (theCars[i].getX() >= theCars[leaderPos].getX()) {
+            leaderPos = i;
+        }
+        theCars[i].setColor(ofColor(255, 255, 255));
+    }
+    theCars[leaderPos].setColor(ofColor(255, 0, 0));
+
 }
 
 //--------------------------------------------------------------
