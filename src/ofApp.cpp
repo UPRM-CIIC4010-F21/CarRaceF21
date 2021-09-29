@@ -20,11 +20,13 @@ void ofApp::update()
 
     int hSpeed = 5;
     for (int i=0; i<numCars; i++) {
+        int deltaX = ofRandom(hSpeed);
         if (((theCars[i].getDirection() > 0) && (theCars[i].getX() + 60 + hSpeed < ofGetWidth())) ||
             (((theCars[i].getDirection() < 0) && (theCars[i].getX() - hSpeed > 0))))
         {
 
-            theCars[i].move(theCars[i].getDirection() * hSpeed, 0);
+            theCars[i].move(theCars[i].getDirection() * deltaX, 0);
+            
         }
         else
         {
