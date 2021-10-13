@@ -2,15 +2,15 @@
 #include "ofApp.h"
 #include "Car.h"
 
-void Car::move(double dx, double dy) {
-    this->xPos += dx;
-    this->yPos += dy;
-}
+// void Car::move(double dx, double dy) {
+//     this->xPos += dx;
+//     this->yPos += dy;
+// }
 
 void Car::draw() {
 
-    double x = this->xPos;
-    double y = this->yPos;
+    double x = this->getX();
+    double y = this->getY();
     ofSetColor(this->getColor());
     // Draw body
     ofDrawRectangle(x + 0, y + 10, 60, 10);
