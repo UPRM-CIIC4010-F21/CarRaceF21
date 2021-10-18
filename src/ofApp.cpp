@@ -3,6 +3,7 @@
 #include "Car.h"
 #include "PoliceCar.h"
 #include "Truck.h"
+#include "Turtle.h"
 
 //--------------------------------------------------------------
 void ofApp::setup()
@@ -12,14 +13,14 @@ void ofApp::setup()
     int lane = 0;
     for (int i = 0; i < numCars; i++)
     {
-        if (i % 3 == 0) {
-            theCars.push_back(new Car(0,lane,1, ofColor(255, 255, 255)));
-        }
-        else if (i % 3 == 1) {
-            theCars.push_back(new Truck(0,lane,1, ofColor(255, 255, 255)));
-        }
-        else {
-            theCars.push_back(new PoliceCar(0,lane,1, ofColor(255, 255, 255)));
+        if (i % 4 == 0) {
+            theCars.push_back(new Car(0, lane, 1, ofColor(255, 255, 255)));
+        } else if (i % 4 == 1) {
+            theCars.push_back(new Truck(0, lane, 1, ofColor(255, 255, 255)));
+        } else if (i % 4 == 2) {
+            theCars.push_back(new PoliceCar(0, lane, 1, ofColor(255, 255, 255)));
+        } else {
+            theCars.push_back(new Turtle(0, lane, 1, ofColor(255, 255, 255)));
         }
         //theCars[i]->move(0, lane);
         lane += 50;

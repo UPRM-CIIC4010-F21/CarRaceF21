@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 #include <vector>
-#include "Vehicle.h"
+#include "Raceable.h"
 
 class ofApp : public ofBaseApp{
 
@@ -31,7 +31,7 @@ class ofApp : public ofBaseApp{
 		//Car theCar = Car(0,0,1); // Creates a single car at (0,0) going left to right
 
 		const int numCars=10;
-		vector<Vehicle*> theCars;
+		vector<Raceable*> theCars;
 		bool raceFinished;
 		
 };
