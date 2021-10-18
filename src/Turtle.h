@@ -1,8 +1,9 @@
 
 #include "ofMain.h"
 #include "Raceable.h"
+#include "Animal.h"
 
-class Turtle : public Raceable {
+class Turtle : public Raceable, public Animal {
 
     private:
 
@@ -33,5 +34,9 @@ class Turtle : public Raceable {
     void setColor(ofColor c) { };
 
     virtual void draw();
+
+    // Implement the Animal interface
+    virtual void yell() { cout << "" << endl; }
+    virtual bool isHerbivore() { return true; }
 
 };
