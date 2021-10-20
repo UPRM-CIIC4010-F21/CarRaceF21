@@ -31,7 +31,7 @@ class ofApp : public ofBaseApp{
 		//Car theCar = Car(0,0,1); // Creates a single car at (0,0) going left to right
 
 		const int numCars=10;
-		vector<Raceable*> theCars;
+		vector<Raceable*> theRaceables;
 		bool raceFinished;
 		
 };
